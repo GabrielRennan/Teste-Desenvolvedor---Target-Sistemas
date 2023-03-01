@@ -1,0 +1,89 @@
+Códigos desenvolvidos em python
+
+#Pergunta 2
+
+valor_fibonacci = int(input("Qual o valor a ser encontrado:"))
+x = 0
+y = 1
+while y<valor_fibonacci:
+  z = y + x
+  x = y
+  y = z
+  print(x,y)
+
+if y==valor_fibonacci:
+  print("O valor ", valor_fibonacci , "está na sequência de Fibonacci.")
+
+else:
+  print("O valor ", valor_fibonacci , " não está na sequência de Fibonacci.")
+  
+  
+  #Pergunta 3
+import array
+
+#import json
+from array import *
+#with open("/dados.json", encoding='utf-8') as dadosFaturamento:
+#    dados = json.load(dadosFaturamento)
+faturamento_diario = array ('f',[22174.1664, 24537.6698, 26139.6134, 0.0, 0.0, 26742.6612, 0.0, 42889.2258, 46251.174, 11191.4722, 0.0, 0.0, 3847.4823, 373.7838, 2659.7563, 48924.2448, 18419.2614, 0.0, 0.0, 35240.1826, 43829.1667 , 18235.6852, 4355.0662, 13327.1025, 0.0, 0.0, 25681.8318, 1718.1221, 13220.495, 8414.61])
+valores = [valor for valor in faturamento_diario if valor>0]
+
+total_valores= sum(valores)
+qtd_valores=len(valores)
+media = total_valores / qtd_valores
+maior_valor= max(valores)
+menor_valor= min(valores) 
+
+
+print(f"O maior valor de faturamento foi de:R$ {maior_valor:,}")
+print(f"O menor valor de faturamento foi de:R$ {menor_valor:,}")
+
+dia=0
+
+for valor in valores:
+  if valor > media:
+    
+    dia+=1
+
+
+
+print(f"A quantidade de dias no mês em que o valor de faturamento diário foi superior à média mensal é igual a: {dia}" )
+
+
+#Pergunta 4
+SP = 67836.43
+RJ = 36678.66
+MG = 29229.88
+ES = 27165.48
+Outros  = 19849.53
+
+faturamento_mensal = SP + RJ + MG +ES + Outros
+porcetagem = 100/faturamento_mensal
+
+percentual_sp = SP * porcetagem
+
+percentual_rj = RJ * porcetagem
+
+percentual_mg = MG * porcetagem
+
+percentual_es = ES * porcetagem
+
+percentual_outros = Outros * porcetagem
+
+print (f"O faturamento mensal foi de :R${faturamento_mensal:,.2f}")
+print(f"O percentual de representação de SP é de {percentual_sp:.2f}%")
+print(f"O percentual de representação de RJ é de {percentual_rj:.2f}%")
+print(f"O percentual de representação de MG é de {percentual_mg:.2f}%")
+print(f"O percentual de representação de ES é de {percentual_es:.2f}%")
+print(f"O percentual de representação de Outros é de {percentual_outros:.2f}%")
+
+
+#Pergunta 5
+
+entrada=input("Digite o texto a ser invertido:")
+
+def inverter(texto):
+  return texto[::-1]
+
+print(inverter(entrada))
+
